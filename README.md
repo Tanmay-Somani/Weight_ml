@@ -7,7 +7,7 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
+- [Future Plans](#Futureplans)
 
 ## Features
 
@@ -51,4 +51,7 @@ To run the application, you need to have Python installed on your system. You ca
 4. **Visualize Progress**: The dashboard will display a graph of your weight over time, along with indicators for your set goals.
 5. **View Current Goal**: Access the "Goal" menu to view your current weight goal or to remove it.
 6. **Access Help**: Use the "Help" menu for information about the application.
+
+## Future Plans
+- **Integrate Machine Learning**: Implement machine learning algorithms to provide personalized weight loss suggestions and predictions based on user data. This may include regression models to forecast weight changes or classification models to identify factors affecting goal management
 
