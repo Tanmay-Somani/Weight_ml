@@ -2,9 +2,7 @@
 
 **Author**: Tanmay Somani  
 **Date**: October 6, 2024  
-**Description**: The Weight Dashboard is a Python-based application that allows users to track their weight over time while setting and monitoring goals. It features a user-friendly interface built with Tkinter and visualizes weight data using Matplotlib.
-
-## Table of Contents
+**Description**: The Weight Dashboard is a Python-based application that allows users to track their weight over time while setting and monitoring goals. 
 
 - [Features](#features)
 - [Installation](#installation)
