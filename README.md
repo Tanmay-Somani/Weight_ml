@@ -40,8 +40,10 @@ To run the application, you need to have Python installed on your system. You ca
 3. **Run the following application**:
    Execute the following command to run the application:
    ```bash
-   python weight_dashboard.py
+   python weight_journal.py
    ```
+### Direct Installation
+or you can directly install by going to my [Release Section](https://github.com/Tanmay-Somani/Weight_ml/releases)
 
 ## Usage
 
