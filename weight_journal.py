@@ -166,22 +166,33 @@ class WeightDashboard:
         dates = [datetime.strptime(date, "%Y-%m-%d %H:%M:%S") for date, _ in self.data]
         weights = [weight for _, weight in self.data]
 
-        scatter = ax.scatter(dates, weights, marker='o', color='blue', label="Actual Weight")
+        print(f"Dates: {dates}")  # Debugging output
+        print(f"Weights: {weights}")  # Debugging output
+
+        # Change to line plot
+        ax.plot(dates, weights, marker='o', color='blue', label="Actual Weight", linestyle='-', linewidth=2)
 
         ax.set_ylabel("Weight (kg)")
         ax.set_xlabel("Date")
         ax.set_title("Weight Over Time")
 
-        if self.goal_weight and self.goal_date:
-            ax.axhline(y=self.goal_weight, color='r', linestyle='--', label="Goal Weight")
-            ax.axvline(x=self.goal_date, color='g', linestyle='--', label="Goal Date")
+        # Check if the goal is set
+        if self.goal_weight is not None and self.goal_date is not None:
+            print(f"Goal Weight: {self.goal_weight}, Goal Date: {self.goal_date}")  # Debugging output
+            ax.axhline(y=self.goal_weight, color='r', linestyle='--', linewidth=2, label="Goal Weight")
+            ax.axvline(x=self.goal_date, color='g', linestyle='--', linewidth=2, label="Goal Date")
             ax.annotate(f"Goal: {self.goal_weight} kg", (self.goal_date, self.goal_weight),
                         xytext=(10, 10), textcoords='offset points')
+
+        # Set limits for the axes
+        ax.set_xlim(min(dates), max(dates))
+        ax.set_ylim(min(weights) - 5, max(weights) + 5)  # Set limits with padding
 
         ax.legend()
         plt.tight_layout()
 
-        mplcursors.cursor(scatter, hover=True).connect("add", lambda sel: sel.annotation.set_text(
+        # Add hover functionality with mplcursors
+        mplcursors.cursor(ax.lines[0], hover=True).connect("add", lambda sel: sel.annotation.set_text(
             f"Date: {dates[sel.index].strftime('%Y-%m-%d')}\nWeight: {weights[sel.index]} kg"
         ))
 
